@@ -1,0 +1,53 @@
+services:
+
+  nxp-next_svc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nxp-next_img
+
+    container_name: nxp-next_cont
+
+    hostname: nxp-nexthost
+
+    restart: unless-stopped
+
+    stdin_open: true
+    tty: true
+
+    volumes:
+      - ./vol:/vol
+
+    networks:
+      - nxp-next_net
+    ports:
+      - 3001:3000
+
+    user: ytani
+    working_dir: /vol
+    command: /usr/bin/bash
+
+  nxp-nginx_svc:
+    image: nginx:latest
+
+    container_name: nxp-nginx_cont
+
+    restart: unless-stopped
+
+    environment:
+      - TZ=Asia/Tokyo
+
+    volumes:
+      - ./vol/nginx/conf:/etc/nginx/conf.d
+      - ./vol/nginx/logs:/var/log/nginx
+      - ./vol/nginx/html:/usr/share/nginx/html
+
+    networks:
+      - nxp-next_net
+    ports:
+      - 82:80
+
+networks:
+  nxp-next_net:
+    driver: bridge
+    enable_ipv6: false
