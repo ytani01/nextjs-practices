@@ -1,8 +1,6 @@
-# docker examples
+# nextjs-practices
 
-## volta1
-
-### docker compose
+## docker compose
 ``` bash
 docker compose up -d
 
@@ -17,26 +15,29 @@ docker compose down
 docker compose down --rmi all --volumes
 ```
 
-### next.js app
+## new Next.js app
 ``` bash
 cd /vol/apps
 pnpx create-next-app@latest my-app
 
 cd my-app
 pnpm run dev
+```
 
-# deploy
-pnpm run build
-cp -r out/* /vol/nginx/html/
+## Deploy
+
+next.config.mjs
+```
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+};
+
+export default nextConfig;
 ```
 
 ``` bash
-cd /vol/apps/app1
-
 pnpm install
-
-pnpm run dev
-
 pnpm run build
 cp -r out/* /vol/nginx/html/
 ```
