@@ -1,6 +1,6 @@
-# nextjs-practices
+# ◆ nextjs-practices
 
-## docker compose
+## ◆◆ docker compose
 ``` bash
 docker compose up -d
 
@@ -15,7 +15,7 @@ docker compose down
 docker compose down --rmi all --volumes
 ```
 
-## new Next.js app
+## ◆◆ new Next.js app
 ``docker compose attach nxp-next_svc``
 ``` bash
 cd /vol/apps
@@ -25,9 +25,9 @@ cd my-app
 pnpm run dev
 ```
 
-## Deploy
+## ◆◆ Deploy
 
-### next.config.mjs
+### ◆◆◆ next.config.mjs
 ```
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -37,7 +37,7 @@ const nextConfig = {
 export default nextConfig;
 ```
 
-### build and copy files
+### ◆◆◆ build and copy files
 ``docker compose attach nxp-next_svc``
 ``` bash
 docker compose attach nxp-next_svc
