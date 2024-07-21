@@ -1,0 +1,37 @@
+{
+  "articles": [
+    {
+      "title": "The Ultimate Arsenal of Tools for Work and Study of Front-End Developer",
+      "color": "#B5C8AD",
+      "img": "1.png",
+      "link": "blog/tools-for-work",
+      "position": "right"
+    },
+    {
+      "title": "Custom Loading and 404 Pages in Next.js 13 Tutorial",
+      "color": "#FDE0EE",
+      "img": "2.png",
+      "link": "blog/loading-and-404-pages",
+      "position": "top"
+    },
+    {
+      "title": "How to create a responsive Navigation bar in Next.js 13",
+      "color": "#66C79A",
+      "img": "3.jpg",
+      "link": "blog/next-navigation-bar",
+      "position": "bottom"
+    },
+    {
+      "title": [
+        "Check out more articles here!",
+        "\n",
+        "\n",
+        "It’s FREE!"
+      ],
+      "color": "#E1AD02",
+      "img": "4.jpg",
+      "link": "/blog",
+      "position": "left"
+    }
+  ]
+}
